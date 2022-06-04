@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+<h3> Employee Detail </h3>
+
+<table class="table table-sm" *ngIf="employee">
+<tbody>
+    <tr>
+        <td> Id </td>
+        <td> {{employee.id}} </td>
+     </tr>   
+    <tr>
+        <td> Name </td>
+        <td> {{employee.name}} </td>
+     </tr>   
+    <tr>
+        <td> Email </td>
+        <td> {{employee.email}} </td>
+     </tr>   
+    <tr>
+        <td> Admin </td>
+        <td> {{employee.admin}} </td>
+     </tr>   
+    <tr>
+        <td> Expenses Due </td>
+        <td> {{employee.expensesDue}} </td>
+     </tr>   
+     <tr>
+        <td> Expenses Paid </td>
+        <td> {{employee.expensesPaid}}  </td>
+    </tr>
+</tbody>
+
+</table>
+
+<div>
+    
+    <button (click)="remove()" class="btn btn-warning"> Delete </button>
+    
+    <span *ngIf="showVerify">
+        <button (click)="verify()" class="btn btn-danger"> Verify Delete </button>
+    </span>
+</div>

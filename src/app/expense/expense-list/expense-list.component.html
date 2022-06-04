@@ -1,0 +1,35 @@
+<app-menu></app-menu>
+<h1 style="margin-left: 5px; text-align:center">Expense List</h1>
+
+<a routerLink = "/exp/create"> Create New </a>
+<div>
+<table class="table table-striped">
+    <thead>
+        <td> Id </td>
+        <td> Desc </td>
+        <td> Status </td>
+        
+        <td> Total </td>
+        <td> EmployeeId </td>
+        <td> Employee </td>
+        <td> Actions </td>
+    </thead>
+
+<tbody>
+    <tr *ngFor="let expense of expenses">
+        <td> {{expense.id}} </td>
+        <td> {{expense.desc}} </td>
+        <td> {{expense.status}} </td>
+        <td> {{expense.total | currency}} </td>
+        <td> {{expense.employeeId}} </td>
+        <td> {{expense.employee.name}} </td>
+        <td>
+            <a routerLink = "/exp/detail/{{expense.id}}"> Detail  </a>  |
+            <a routerLink = "/exp/edit/{{expense.id}}"> Edit </a>
+            
+
+        </td>
+    </tr>
+</tbody>
+</table>
+</div>
