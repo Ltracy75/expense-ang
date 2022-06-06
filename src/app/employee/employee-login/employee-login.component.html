@@ -8,11 +8,13 @@
     </tr>
     <tr>
         <td>Password </td>
-        <td> <input [(ngModel)]="password" type="password" name="password"> </td>
+        <td> <input [(ngModel)]="password" id="confirm_password"  type="password" > </td>
     </tr>
+
 </table>
 <div>
     <button (click)="login()" class="btn btn-primary"> Login </button>
 <span *ngIf="message" class="text-danger fw-bold"> {{message}} </span>
 </div>
+    <a routerLink = "/empl/createnew"> Create New Account </a>
 </form>

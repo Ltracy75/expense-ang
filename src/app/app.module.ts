@@ -16,6 +16,11 @@ import { ExpenseListComponent } from './expense/expense-list/expense-list.compon
 import { ExpenseEditComponent } from './expense/expense-edit/expense-edit.component';
 import { ExpenseDetailComponent } from './expense/expense-detail/expense-detail.component';
 import { ExpenseCreateComponent } from './expense/expense-create/expense-create.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
+import { ItemCreateComponent } from './item/item-create/item-create.component';
+import { ItemDetailComponent } from './item/item-detail/item-detail.component';
+import { ItemEditComponent } from './item/item-edit/item-edit.component';
+import { EmployeeCreatenewComponent } from './employee/employee-createnew/employee-createnew.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +30,19 @@ import { ExpenseCreateComponent } from './expense/expense-create/expense-create.
     EmployeeEditComponent,
     EmployeeCreateComponent,
     EmployeeLoginComponent,
+    
     MenuComponent,
+
     ExpenseListComponent,
     ExpenseEditComponent,
     ExpenseDetailComponent,
-    ExpenseCreateComponent
+    ExpenseCreateComponent,
+
+    ItemListComponent,
+    ItemCreateComponent,
+    ItemDetailComponent,
+    ItemEditComponent,
+    EmployeeCreatenewComponent
   ],
   imports: [
     BrowserModule, RouterModule, FormsModule, HttpClientModule, AppRoutingModule

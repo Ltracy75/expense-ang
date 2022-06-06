@@ -1,0 +1,23 @@
+<h3> Welcome </h3>
+
+<table class="table table-sm" *ngIf="employee">
+<tbody>
+    <tr>
+        <td> Name </td>
+        <td> <input [(ngModel)] = "employee.name"  ng-model="somefield"> </td>
+     </tr>  
+     <tr>
+        <td> Email </td>
+        <td> <input [(ngModel)] = "employee.email" ng-model="somefield2" > </td>
+     </tr>   
+     <tr>
+        <td> Password </td>
+        <td> <input [(ngModel)] = "employee.password" type = "password" ng-model="somefield"> </td>
+     </tr>
+     
+</tbody>
+
+</table>
+<div>
+    <button (click)="save()" class ="btn btn-primary" ngshow="somefield" ngshow="somefield2" ngshow="somefield3"> Save! </button>
+</div>
