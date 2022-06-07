@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<h1 style="margin-left: 5px; text-align:center">Expense Approved List</h1>
+
+<div>
+<table class="table table-striped">
+    <thead>
+        <td> Id </td>
+        <td> Desc </td>
+        <td> Status </td>
+        
+        <td> Total </td>
+        <td> Employee </td>
+        <td> Actions </td>
+    </thead>
+
+<tbody>
+    <tr *ngFor="let expense of expenses">
+        <td> {{expense.id}} </td>
+        <td> {{expense.desc}} </td>
+        <td >{{expense.status}} </td>
+        <td> {{expense.total | currency}} </td>
+        <td> {{expense.employee.name}} </td>
+        <td>
+            <a  routerLink = "/exp/detail/{{expense.id}}"> Review </a>  
+        </td>
+    </tr>
+</tbody>
+</table>
+</div>

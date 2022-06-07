@@ -16,6 +16,10 @@ export class ExpenseService {
     return this.http.get(`${this.baseurl}`) as Observable<Expense[]>;
   }
 
+  reviewlist(): Observable<Expense[]> {
+    return this.http.get(`${this.baseurl}/reviewed`) as Observable<Expense[]>;
+  }
+
   get(id: number): Observable<Expense> {
     return this.http.get(`${this.baseurl}/${id}`) as Observable<Expense>;
   }

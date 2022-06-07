@@ -3,18 +3,19 @@
 
 <table class="table table-sm">
     <tr>
-        <td>Email </td>
-        <td> <input [(ngModel)]="email" name="email"> </td>
+        <td>Email:</td>
+        <td><input [(ngModel)]="email" name="email"></td>
     </tr>
     <tr>
-        <td>Password </td>
-        <td> <input [(ngModel)]="password" id="confirm_password"  type="password" > </td>
+        <td>Password:</td>
+        <td><input [(ngModel)]="password" type="password" name="password"></td>
     </tr>
-
 </table>
 <div>
-    <button (click)="login()" class="btn btn-primary"> Login </button>
-<span *ngIf="message" class="text-danger fw-bold"> {{message}} </span>
+    <button (click)="login()" class="btn btn-primary">Login</button>
+    <span *ngIf="message" class="text-danger fw-bold">
+       {{ message }}
+    </span>
 </div>
     <a routerLink = "/empl/createnew"> Create New Account </a>
 </form>

@@ -1,7 +1,9 @@
 <app-menu></app-menu>
-<h1 style="margin-left: 5px; text-align:center">Employee List</h1>
-
-<a routerLink = "/empl/create"> Create New </a>
+<span>
+<a routerLink = "/empl/create"> Create New Employee </a>
+<h1 style="text-align:center;">Employee List</h1>
+</span>
+<input [(ngModel)]="seachCriteria" placeholder="Search Employees" style="margin-left: 45%">
 <div>
 <table class="table table-striped">
     <thead>
@@ -15,12 +17,12 @@
         <td> Actions </td>
     </thead>
 
-<tbody>
-    <tr *ngFor="let employee of employees">
+<tbody *ngIf="employees">
+    <tr *ngFor="let employee of employees | employeeSearch: seachCriteria">
         <td> {{employee.id}} </td>
         <td> {{employee.name}} </td>
         <td> {{employee.email}} </td>
-               <td> {{employee.admin ? "Yes" : "No"}} </td>
+               <td> {{employee.admin | bool}} </td>
         <td> {{employee.expensesDue | currency }} </td>
         <td> {{employee.expensesPaid | currency}} </td>
         <td>

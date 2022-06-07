@@ -21,6 +21,15 @@ import { ItemCreateComponent } from './item/item-create/item-create.component';
 import { ItemDetailComponent } from './item/item-detail/item-detail.component';
 import { ItemEditComponent } from './item/item-edit/item-edit.component';
 import { EmployeeCreatenewComponent } from './employee/employee-createnew/employee-createnew.component';
+import { ExpenselineCreateComponent } from './expenseline/expenseline-create/expenseline-create.component';
+import { ExpenselineEditComponent } from './expenseline/expenseline-edit/expenseline-edit.component';
+import { ExpenseLineComponent } from './expense/expense-line/expense-line.component';
+import { ExpenseReviewComponent } from './expense/expense-review/expense-review.component';
+import { ExpenseApproveComponent } from './expense/expense-approve/expense-approve.component';
+import { BoolDisplayPipe } from './misc/bool-display.pipe';
+import { EmployeeSearchPipe } from './misc/employee-search.pipe';
+import { ExpenseSearchPipe } from './misc/expense-search.pipe';
+import { SortPipe } from './misc/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +51,16 @@ import { EmployeeCreatenewComponent } from './employee/employee-createnew/employ
     ItemCreateComponent,
     ItemDetailComponent,
     ItemEditComponent,
-    EmployeeCreatenewComponent
+    EmployeeCreatenewComponent,
+    ExpenselineCreateComponent,
+    ExpenselineEditComponent,
+    ExpenseLineComponent,
+    ExpenseReviewComponent,
+    ExpenseApproveComponent,
+    BoolDisplayPipe,
+    EmployeeSearchPipe,
+    ExpenseSearchPipe,
+    SortPipe,
   ],
   imports: [
     BrowserModule, RouterModule, FormsModule, HttpClientModule, AppRoutingModule

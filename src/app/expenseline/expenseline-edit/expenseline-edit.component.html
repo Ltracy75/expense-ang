@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+<h3> ExpenseLine Edit </h3>
+
+<table class="table table-sm" *ngIf="expenseline">
+<tbody>
+    <tr>
+        <td> Id </td>
+        <td> <input [(ngModel)] = "expenseline.id" disabled> </td>
+     </tr>   
+    <tr>
+        <td> Quantity </td>
+        <td> <input [(ngModel)] = "expenseline.quantity" type = "number"> </td>
+     </tr>   
+    <tr>
+        <td> Item Name </td>
+        <td> <select [(ngModel)] = "expenseline.itemId" > 
+        <option *ngFor="let item of items" value="{{item.id}}"> {{item.name}} </select> </td>
+        </tr>
+</tbody>
+
+</table>
+<div>
+    <button (click)="save()" class ="btn btn-primary"> Save! </button>
+</div>
+

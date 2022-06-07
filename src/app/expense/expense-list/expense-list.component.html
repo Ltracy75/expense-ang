@@ -2,32 +2,31 @@
 <h1 style="margin-left: 5px; text-align:center">Expense List</h1>
 
 <a routerLink = "/exp/create"> Create New </a>
+
+<input [(ngModel)]="seachCriteria" placeholder="Search Expenses" style="margin-left: 41%">
 <div>
 <table class="table table-striped">
     <thead>
-        <td> Id </td>
-        <td> Desc </td>
-        <td> Status </td>
+        <td> <button (click)="sortFn('id')" class="btn btn-link"> Id </button>  </td>
+        <td> <button (click)="sortFn('desc')" class="btn btn-link"> Desc </button>  </td>
+        <td> <button (click)="sortFn('status')" class="btn btn-link"> Status </button>  </td>
         
-        <td> Total </td>
-        <td> EmployeeId </td>
-        <td> Employee </td>
+        <td> <button (click)="sortFn('total')" class="btn btn-link"> Total</button> </td>
+                <td> <button (click)="sortFn('employeeName')" class="btn btn-link"> Employee </button>  </td>
         <td> Actions </td>
     </thead>
 
-<tbody>
-    <tr *ngFor="let expense of expenses">
+<tbody *ngIf="expenses">
+    <tr *ngFor="let expense of expenses | expenseSearch: seachCriteria | sort: sortColumn:sortAsc">
         <td> {{expense.id}} </td>
         <td> {{expense.desc}} </td>
         <td> {{expense.status}} </td>
         <td> {{expense.total | currency}} </td>
-        <td> {{expense.employeeId}} </td>
         <td> {{expense.employee.name}} </td>
         <td>
-            <a routerLink = "/exp/detail/{{expense.id}}"> Detail  </a>  |
-            <a routerLink = "/exp/edit/{{expense.id}}"> Edit </a>
-            
-
+            <a *ngIf="expense.status != 'Paid'" routerLink = "/exp/detail/{{expense.id}}"> Detail | </a>  
+            <a *ngIf="expense.status != 'Paid'" routerLink = "/exp/edit/{{expense.id}}"> Edit |</a> 
+            <a routerLink = "/exp/line/{{expense.id}}"> Lines </a> 
         </td>
     </tr>
 </tbody>

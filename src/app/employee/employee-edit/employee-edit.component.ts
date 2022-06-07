@@ -22,7 +22,7 @@ export class EmployeeEditComponent implements OnInit {
     console.debug("B4:", this.employee);
     this.emplsvc.change(this.employee).subscribe({
       next: (res) => {
-        console.debug("Employee Chagned!");
+        console.debug("Employee Changed!");
         this.router.navigateByUrl("/empl/list")
       },
       error: (err) => {console.error(err);}

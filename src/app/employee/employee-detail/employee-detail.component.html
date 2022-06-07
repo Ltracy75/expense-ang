@@ -17,15 +17,16 @@
      </tr>   
     <tr>
         <td> Admin </td>
-        <td> {{employee.admin}} </td>
+        <td> {{employee.admin | bool}} </td>
+            <!-- // bool referenced in misc (pipe) -->
      </tr>   
     <tr>
         <td> Expenses Due </td>
-        <td> {{employee.expensesDue}} </td>
+        <td> {{employee.expensesDue | currency}} </td>
      </tr>   
      <tr>
         <td> Expenses Paid </td>
-        <td> {{employee.expensesPaid}}  </td>
+        <td> {{employee.expensesPaid | currency}}  </td>
     </tr>
 </tbody>
 
